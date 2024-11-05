@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying classes</title>
+</head>
+<style>
+    .card{
+        width: 250px;
+        height: 270px;
+        border: 2px double black;
+        background-color: #68c5da;
+
+    }
+    .product-img{
+        height: 100px;
+        display: block;
+        margin: 20px auto; 
+    }
+    .product-title{
+        margin: 0;
+        padding: 0;
+     text-align: center;
+    }
+    .btn-buy-now{
+background-color:black;
+color: whitesmoke;
+border: none;
+padding: 5px 20px ;
+display: block;
+margin: 10px auto;
+cursor: pointer;
+    }
+    .quantity-icon{
+        height: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .quantity-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    .product-price{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="card " id="card">
+        <img src="./img/watch-removebg-preview.png" class="product-img"/>
+        <h2 class="product-title">smart watch</h2>
+        <p class="product-price">
+                   Price : 1500 /
+        </p>
+        <div class="quantity-container">
+            <img src="./img/minus.png" class="quantity-icon" onclick="dec()"/>
+            <span id="quantity">1</span>
+            <img src="./img/plus.png" class="quantity-icon" onclick="inc()"/>
+        </div>
+        <button onclick="" class="btn-buy-now">click now</button>
+
+    </div>
+    <script>
+
+        const quantElement = document.getElementById('quantity');
+
+        function inc(){
+            let quantity= parseInt(quantElement.innerText);
+            quantElement.innerText = ++quantity;
+
+        }
+        function dec(){
+            let quantity= parseInt(quantElement.innerText);
+            if(quantity>1){
+            quantElement.innerText = -- quantity;
+
+        }
+    }
+    </script>
+    
+    
+</body>
+</html>
